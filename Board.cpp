@@ -32,35 +32,79 @@ Board::Board(bool defaultState)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+char PieceIdToString(byte pieceId/*,byte colors[4]*/)
+{
+	switch (pieceId)
+	{
+		case idEmpty:		{ return ' '; }
+		case idWhiteKing:	{ return 'K'; }
+		case idBlackKing:	{ return 'k'; }
+		case idWhiteKnight: { return 'N'; }
+		case idBlackKnight: { return 'n'; }
+		case idWhitePawn:	{ return 'P'; }
+		case idBlackPawn:	{ return 'p'; }
+		case idWhiteRook:	{ return 'R'; }
+		case idBlackRook:	{ return 'r'; }
+		case idWhiteBishop: { return 'B'; }
+		case idBlackBishop: { return 'b'; }
+		case idWhiteQueen:	{ return 'Q'; }
+		case idBlackQueen:	{ return 'q'; }
+		default: { throw - 3; }
+	}
+	//return string;
+}
 #define XfromI(i) ((i) % 8 + 1)
 #define YfromI(i) ((i) / 8 + 1)
 #define IfromXY(x, y) (((y)-1)*8+(x-1))
+
+
+char* Board::string(bool large)
+{
+
+	char string[109] = 
+"  abcdefgh\n        \n8 --------\n7 --------\n6 --------\n5 --------\n4 --------\n3 --------\n2 --------\n1 --------\0";
+	//char places[64] = {24, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37, 38, 39, 40, 41, 42, 46}
+	byte c = 0;
+	for (byte i = 22; c<64; i+= 3)
+	{
+		for (byte u = 0; u < 8; u++)
+		{
+			string[i] = 
+				PieceIdToString(squares[c]);
+			c++;
+			i++;
+		}
+	}
+		
+	
+
+
+	//we need to color it also
+	return string;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #define abs(x) ((x) > 0? (x) : 0-(x))
 #define sign(x) ((x) > 0? 1 : ((x) < 0? -1 : 0));
 #define isPoitive(x) ((x) > 0)
@@ -70,10 +114,11 @@ bool NeutralKing_MoveLegal(sbyte dx, sbyte dy);
 bool NeutralKnight_MoveLegal(sbyte dx,sbyte dy);
 
 
-bool Board::IsMoveLegal(short move)
+bool Board::IsMoveLegal(byte* m)
 {
-	sbyte start = ((sbyte*)(&move))[0];
-	sbyte end = ((sbyte*)(&move))[1];
+	sbyte start = m[0];
+	sbyte end = m[1];
+	sbyte extra = m[2];
 	//redesign short processing
 	
 	
@@ -151,6 +196,9 @@ bool Board::IsMoveLegal(short move)
 		default: { throw -3; }
 	}
 }
+
+
+
 
 
 inline bool NeutralKing_MoveLegal(sbyte dx, sbyte dy)

@@ -1,13 +1,13 @@
 #include"main.h"
 #pragma once
-constexpr byte idEmpty		= 0b0000;
+constexpr byte idEmpty			= 0b0000;
 
-constexpr byte idNeutralPawn = 0b10001;
-constexpr byte idNeutralKnight = 0b10010;
-constexpr byte idNeutralBishop = 0b100011;
-constexpr byte idNeutralRook = 0b10100;
-constexpr byte idNeutralQueen = 0b10101;
-constexpr byte idNeutralKing = 0b100110;
+constexpr byte idNeutralPawn	= 0b10001;
+constexpr byte idNeutralKnight	= 0b10010;
+constexpr byte idNeutralBishop	= 0b100011;
+constexpr byte idNeutralRook	= 0b10100;
+constexpr byte idNeutralQueen	= 0b10101;
+constexpr byte idNeutralKing	= 0b100110;
 
 constexpr byte idWhitePawn		= 0b0010;
 constexpr byte idWhiteKnight	= 0b0100;

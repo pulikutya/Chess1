@@ -21,12 +21,9 @@ void PrintNullString(char* string)
 }
 int main()
 {
-	byte a = 0;
-	sbyte b = -69;
-	a = b + 30;
-	b = a / 8;
-	int a2 = (int)a;
-	int b2 = (int)b;
+	byte a = true;
+	int b = a;
+	stdio::printf("%p", a);
 
 	return 0;
 }

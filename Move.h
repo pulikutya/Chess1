@@ -25,6 +25,6 @@ public:
 	inline char* ToString();
 
 
-	bool NeutralLegal(byte pieceId);
+	bool MoveLegal(byte pieceId);
 };
 

@@ -21,9 +21,22 @@ void PrintNullString(char* string)
 }
 int main()
 {
-	byte a = true;
-	int b = a;
-	stdio::printf("%p", a);
+	ushort t = 0b1001100001100001;
+	byte* p = (byte*)(&t);
+
+	byte a = 0;
+	byte b = 0;
+	byte c = 0;
+
+	a = (p[0] << 2);
+	a = a >> 2;
+
+	b = p[0] >> 6;
+	b = b | (p[1] << 2);
+	b = b << 2;
+	b = b >> 2;
+
+	c = p[1] >> 4;
 
 	return 0;
 }

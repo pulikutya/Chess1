@@ -16,12 +16,12 @@ public:
 
 	#define idEmpty  0b0000;
 
-	#define idNeutralPawn		0b10010;
-	#define idNeutralKnight		0b10100;
-	#define idNeutralBishop		0b10110;
-	#define idNeutralRook		0b11000;
-	#define idNeutralQueen		0b11010;
-	#define idNeutralKing		0b11100;
+	#define idPawn		0b001;
+	#define idKnight	0b010;
+	#define idBishop	0b011;
+	#define idRook		0b100;
+	#define idQueen		0b101;
+	#define idKing		0b110;
 
 	#define idWhitePawn			0b0010;
 	#define idWhiteKnight		0b0100;
@@ -42,7 +42,6 @@ public:
 	byte id;
 	byte Color(); //empty, white, black, neutral
 	inline bool Empty();
-	inline bool Neutral();
 	inline bool White();
 	inline bool Black();
 

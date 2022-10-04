@@ -2,36 +2,47 @@
 #include "smath.h"
 
 Move::Move(byte start, byte end, byte extra)
+    :data(0)
 {
+    byte* p = (byte*)(&data);
+    p[0] = (end << 4) | start;
+    p[1] = (extra << 4) | (end >> 2);
 }
 
 Move::Move(ushort data)
+    :data(data)
 {
 }
 
-Move::Move(byte sx, byte sy, byte ex, byte ey)
+Move::Move(byte sx, byte sy, byte ex, byte ey, byte extra)
+    : Move(sy*8+sx, ex*8+ey, extra)
 {
 
 }
 
 Move::Move(char text[5])
+    :data(0)
 {
 
 }
 
 inline byte Move::start()
 {
-    return byte();
+    byte r = ((byte*)(&data))[0] << 2;
+    r >>= 2;
 }
 
 inline byte Move::end()
 {
-    return byte();
+    byte r = ((byte*)(&data))[0] >> 6;
+    r |= ((byte*)(&data))[1] << 2;
+    r <<= 2;
+    r >>= 2;
 }
 
 inline byte Move::extra()
 {
-    return byte();
+    return ((byte*)(&data))[1] >> 4;
 }
 
 inline sbyte Move::sx()
@@ -67,16 +78,4 @@ inline sbyte Move::dy()
 inline char* Move::ToString()
 {
     return nullptr;
-}
-
-bool Move::NeutralLegal(byte pieceId)
-{
-    switch (pieceId)
-    {
-        case idEmpty: { return false; }
-        case idNeutralKing: {
-            abs(this->dx()) + abs(this->dy()) < 2;
-        }
-        
-    }
 }

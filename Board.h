@@ -5,10 +5,11 @@
 
 
 #define isCoordInBoard(coord) (coord < 64)
+/*
 class Board
 {
 public:
-	byte squares[64];
+	byte* squares;
 	static const size_t squares_size = 64;
 
 	Board(bool defaultState = true);
@@ -36,3 +37,15 @@ private:
 	
 };
 
+*/
+
+class Board
+{
+	byte* squares;
+	static const size_t squares_length = 64;
+
+	Board(byte* squares);
+	Board(bool defaultState = true);
+	Board(Board& Board);
+
+};

@@ -7,36 +7,31 @@ Piece::Piece(byte id)
 
 byte Piece::Color()
 {
-    return Empty()? 0: (Neutral? 1 : (White() ? 2 : 3));
+    return this->White();
 }
 
 inline bool Piece::Empty()
 {
-    return id == 0 || id == 1;
-}
-
-inline bool Piece::Neutral()
-{
-    return id > 16;
+    return this->id == 0 || this->id == 1;
 }
 
 inline bool Piece::White()
 {
-    return (id % 2);
+    return (this->id % 2);
 }
 
 inline bool Piece::Black()
 {
-    return !(id % 2);
+    return !(this->id % 2);
 }
 
 inline bool Piece::ColorEqual(Piece& other)
 {
-    return other.Color() == this->Color();
+    return ((other.Color() == this->Color() && !this->Empty() && !other.Empty()));
 }
 
 inline bool Piece::TypeEqual(Piece& other)
 {
-    return false;
+    return !this->Empty() && !other.Empty() && ((this->id >> 1) == (other.id >> 1));
 }
 

@@ -1,20 +1,7 @@
-#include "Board.h"
+/*#include "Board.h"
 
 
-constexpr byte defaultBoardState[64] = {	
-idWhiteRook,	idWhiteKnight,	idWhiteBishop,	idWhiteKing,	idWhiteQueen,	idWhiteBishop,	idWhiteKnight,	idWhiteRook,	
-idWhitePawn,	idWhitePawn,	idWhitePawn,	idWhitePawn,	idWhitePawn,	idWhitePawn,	idWhitePawn,	idWhitePawn,	
-idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,	
-idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,	
-idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,	
-idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,		idEmpty,	
-idBlackPawn,	idBlackPawn,	idBlackPawn,	idBlackPawn,	idBlackPawn,	idBlackPawn,	idBlackPawn,	idBlackPawn,	
-idBlackRook,	idBlackKnight,	idBlackBishop,	idBlackKing,	idBlackQueen,	idBlackBishop,	idBlackKnight,	idBlackRook,	
-};
 
-constexpr byte emptyBoardState[64] = {
-	idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty,idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty,idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty,idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty,idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty,idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty,idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty,idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty, idEmpty
-};
 
 
 Board::Board(bool defaultState) 
@@ -32,7 +19,7 @@ Board::Board(bool defaultState)
 }
 
 
-char PieceIdToString(byte pieceId/*,byte colors[4]*/)
+char PieceIdToString(byte pieceId,byte colors[4])
 {
 	switch (pieceId)
 	{
@@ -311,3 +298,4 @@ bool Board::NeutralQueen_MoveLegal(sbyte dx, sbyte dy, sbyte sx, sbyte sy, sbyte
 {
 	return NeutralBishop_MoveLegal(dx, dy, sx, sy, ex, ey) || NeutralRook_MoveLegal(dx, dy, sx, sy, ex, ey);
 }
+*/

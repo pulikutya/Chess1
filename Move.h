@@ -8,7 +8,7 @@ public:
 
 	inline Move(byte start, byte end, byte extra);
 	inline Move(ushort data);
-	Move(byte sx, byte sy, byte ex, byte ey);
+	Move(byte sx, byte sy, byte ex, byte ey, byte extra);
 	inline Move(char text[5]);
 
 	inline byte start();

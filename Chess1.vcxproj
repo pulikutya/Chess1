@@ -128,14 +128,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="LinkedList2.h" />
+    <ClInclude Include="LinkedList2Element.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Piece.h" />
     <ClInclude Include="smath.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="LinkedList2.cpp" />
+    <ClCompile Include="LinkedList2Element.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Piece.cpp" />

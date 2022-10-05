@@ -1,8 +1,8 @@
-/*#include "Board.h"
+#include "Board.h"
 
 
 
-
+/*
 
 Board::Board(bool defaultState) 
 	: WhiteCastleLeftPossible(true), WhiteCastleRightPossible(true), BlackCastleLeftPossible(true), BlackCastleRightPossible(true)
@@ -299,3 +299,81 @@ bool Board::NeutralQueen_MoveLegal(sbyte dx, sbyte dy, sbyte sx, sbyte sy, sbyte
 	return NeutralBishop_MoveLegal(dx, dy, sx, sy, ex, ey) || NeutralRook_MoveLegal(dx, dy, sx, sy, ex, ey);
 }
 */
+Board::Board(Block<Piece> data)
+{
+	if (data.Size != 64) {throw 1; }
+	this->data = data;
+}
+
+Board::Board(bool defaultState)
+{
+	if (defaultState)
+	{
+		this->data = Board::defaultState;
+	}
+	else
+	{
+		this->data = Board::EmptyState;
+	}
+}
+
+inline Piece Board::TargetPiece(Move Move)
+{
+	return *data[Move.start()];
+}
+
+inline Piece Board::StartPiece(Move Move)
+{
+	return *data[Move.end()];
+}
+
+void Board::Do(Move Move)
+{
+	if (castling)
+	{
+
+	}
+	else if (elpassant)
+	{
+
+	}
+	else if (promotion)
+	{
+
+	}
+	else
+	{
+		*(this->data[Move.end()]) = *(this->data[Move.start()]);
+		*(this->data[Move.start()]) = Piece(Piece::idEmpty);
+	}
+}
+
+void Board::Undo(Move Move, Piece Capture)
+{
+	if (castling)
+	{
+
+	}
+	else if (elpassant)
+	{
+
+	}
+	else if (promotion)
+	{
+
+	}
+	else
+	{
+		
+	}
+}
+
+bool Board::MoveLegal(Move Move, bool IncludeCheck)
+{
+	if (StartPiece(Move).Empty()) { return false; }
+}
+
+char* Board::ToText(byte type)
+{
+	return nullptr;
+}

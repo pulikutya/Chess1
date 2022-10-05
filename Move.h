@@ -22,9 +22,13 @@ public:
 	inline sbyte dx();
 	inline sbyte dy();
 
+	inline byte extra_promotion();
+	inline bool extra_castling();
+	inline bool extra_el_passant();
+
 	inline char* ToString();
 
 
-	bool MoveLegal(byte pieceId);
+	bool MoveLegal1(Piece piece);
 };
 

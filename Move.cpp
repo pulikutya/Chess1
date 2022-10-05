@@ -75,6 +75,21 @@ inline sbyte Move::dy()
     return this->ey() - this->sy();
 }
 
+inline byte Move::extra_promotion()
+{
+    return byte();
+}
+
+inline bool Move::extra_castling()
+{
+    return false;
+}
+
+inline bool Move::extra_el_passant()
+{
+    return false;
+}
+
 inline char* Move::ToString()
 {
     return nullptr;

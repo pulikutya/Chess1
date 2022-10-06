@@ -11,6 +11,9 @@ class LinkedList2Element
 
 	inline bool PreviousNullptr();
 	inline bool NextNullptr();
+
+	inline bool operator ==(LinkedList2Element<T>& other);
+	inline bool operator !=(LinkedList2Element<T>& other);
 };
 
 template<typename T>
@@ -29,4 +32,16 @@ template<typename T>
 inline bool LinkedList2Element<T>::NextNullptr()
 {
 	return Next == nullptr;
+}
+
+template<typename T>
+inline bool LinkedList2Element<T>::operator==(LinkedList2Element<T>& other)
+{
+	return (this->data == other.data) && (this->Next == other.Next) && (this->Previous == other.Previous);
+}
+
+template<typename T>
+inline bool LinkedList2Element<T>::operator!=(LinkedList2Element<T>& other)
+{
+	return !(this->operator==(other));
 }

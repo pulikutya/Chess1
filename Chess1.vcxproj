@@ -138,10 +138,7 @@
     <ClInclude Include="smath.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Board.cpp" />
-    <ClCompile Include="LinkedList2.cpp" />
-    <ClCompile Include="LinkedList2Element.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Piece.cpp" />

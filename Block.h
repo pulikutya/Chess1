@@ -8,6 +8,11 @@ public:
 	T* Pointer;
 	size_t Size;
 
+	T* iter; //can be unsafe
+	bool iter_next();
+	bool iter_prev();
+	void iter_reset();
+
 	inline T* End();
 
 	Block(size_t Size);
@@ -15,22 +20,40 @@ public:
 	
 	Block<T> Copy();
 
-	T* ForEach(bool(*F)(T*&), T* start = nullptr, T* end = nullptr);
+	//T* ForEach(bool(*F)(T*&), T* start = nullptr, T* end = nullptr);
 
 	inline T* operator[](unsigned long long index);
 };
 
 template<typename T>
+inline bool Block<T>::iter_next()
+{
+	return (this->iter== this->End())? false : (++(this->iter) == this->End());
+}
+
+template<typename T>
+inline bool Block<T>::iter_prev()
+{
+	return (this->iter == this->End()) ? false : (--(this->iter) == this->Pointer-1);
+}
+
+template<typename T>
+inline void Block<T>::iter_reset()
+{
+	this->iter = this->Pointer-1;
+}
+
+template<typename T>
 inline T* Block<T>::End()
 {
-	return Pointer + Size;
+	return this->Pointer + this->Size;
 }
 
 template<typename T>
 inline Block<T>::Block(size_t Size)
 	:Size(Size)
 {
-	Pointer = new T[Size];
+	this->Pointer = new T[Size];
 }
 
 template<typename T>
@@ -52,7 +75,7 @@ inline Block<T> Block<T>::Copy()
 }
 
 
-template<typename T>
+/*template<typename T>
 inline T* Block<T>::ForEach(bool(*F)(T*&), T* i, T* end)
 {
 #if safe
@@ -67,7 +90,7 @@ inline T* Block<T>::ForEach(bool(*F)(T*&), T* i, T* end)
 #endif
 	while ((i < this->End() && i >= this->Pointer) && F(i)) { i++; }
 	return (i < this->End() && i >= this->Pointer) ? i : nullptr;
-}
+}*/
 
 template<typename T>
 inline T* Block<T>::operator[](unsigned long long index)

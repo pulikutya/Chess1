@@ -3,9 +3,10 @@
 template<typename T>
 class LinkedList2Element
 {
+public:
 	LinkedList2Element<T>* Previous;
 	T* data;
-	LinkedList2Element<T*> Next;
+	LinkedList2Element<T>* Next;
 
 	LinkedList2Element(T* data = nullptr, LinkedList2Element<T>* Previous = nullptr, LinkedList2Element<T>* Next = nullptr);
 

@@ -299,6 +299,9 @@ bool Board::NeutralQueen_MoveLegal(sbyte dx, sbyte dy, sbyte sx, sbyte sy, sbyte
 	return NeutralBishop_MoveLegal(dx, dy, sx, sy, ex, ey) || NeutralRook_MoveLegal(dx, dy, sx, sy, ex, ey);
 }
 */
+
+
+
 Board::Board(Block<Piece> data)
 {
 	if (data.Size != 64) {throw 1; }

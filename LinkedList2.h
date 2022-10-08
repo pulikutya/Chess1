@@ -115,14 +115,14 @@ inline LinkedList2Element<T>* LinkedList2<T>::ElementAt(ulong index)
 {
 	ulong i = 0;
 	this->iter_reset();
-	while (this->iter_next() && i < index) { index++; }
+	while (this->iter_next() && i < index) { i++; }
 	if (i < index)
 	{
 		throw 1;
 	}
 	else
 	{
-		return iter_data();
+		return iter;
 	}
 }
 
@@ -135,7 +135,7 @@ inline T LinkedList2<T>::DataAt(ulong index)
 template<typename T>
 inline void LinkedList2<T>::AddElement(T Element)
 {
-	this->Last->Previous->Next = new LinkedList2Element(new T(Element), this->Last->Prev, this->Last);
+	this->Last->Previous->Next = new LinkedList2Element(new T(Element), this->Last->Previous, this->Last);
 	this->Last->Previous = this->Last->Previous->Next;
 }
 

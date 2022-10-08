@@ -373,7 +373,19 @@ void Board::Undo(Move Move, Piece Capture)
 
 bool Board::MoveLegal(Move Move, bool IncludeCheck)
 {
-	if (StartPiece(Move).Empty()) { return false; }
+	Piece StartPiece = this->StartPiece(Move);
+	Piece TargetPiece = this->TargetPiece(Move);
+	if (StartPiece.Empty()) { return false; }
+	if (!TargetPiece.Empty() && TargetPiece.ColorEqual(StartPiece)) { return false; }
+
+	if (IncludeCheck)
+	{
+
+	}
+	else
+	{
+	
+	}
 }
 
 char* Board::ToText(byte type)

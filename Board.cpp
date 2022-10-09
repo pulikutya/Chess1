@@ -378,6 +378,7 @@ bool Board::MoveLegal(Move Move, bool IncludeCheck)
 	if (StartPiece.Empty()) { return false; }
 	if (!TargetPiece.Empty() && TargetPiece.ColorEqual(StartPiece)) { return false; }
 
+	sbyte 
 	if (IncludeCheck)
 	{
 

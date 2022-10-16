@@ -94,3 +94,55 @@ inline char* Move::ToString()
 {
     return nullptr;
 }
+
+inline void Move::start(byte v)
+{
+    *this = Move(v, end(), extra());
+}
+
+inline void Move::end(byte v)
+{
+    *this = Move(start(), v, extra());
+}
+
+inline void Move::extra(byte v)
+{
+    *this = Move(start(), end(), v);
+}
+
+inline void Move::sx(sbyte v)
+{
+    //start(sy() * 8 + v;
+}
+
+inline void Move::sy(sbyte v)
+{
+}
+
+inline void Move::ex(sbyte v)
+{
+}
+
+inline void Move::ey(sbyte v)
+{
+}
+
+inline void Move::dx(sbyte v)
+{
+}
+
+inline void Move::dy(sbyte v)
+{
+}
+
+inline void Move::extra_promotion(byte v)
+{
+}
+
+inline void Move::extra_castling(bool v)
+{
+}
+
+inline void Move::extra_el_passant(bool v)
+{
+}

@@ -12,21 +12,21 @@
 class Piece
 {
 public:
-	static const byte idEmpty		= 0b0000;
+	static constexpr byte idEmpty		= 0b0000;
 
-	static const byte idWhitePawn	= 0b0010;
-	static const byte idWhiteKnight	= 0b0100;
-	static const byte idWhiteBishop	= 0b0110;
-	static const byte idWhiteRook	= 0b1000;
-	static const byte idWhiteQueen	= 0b1010;
-	static const byte idWhiteKing	= 0b1100;
+	static constexpr byte idWhitePawn	= 0b0010;
+	static constexpr byte idWhiteKnight	= 0b0100;
+	static constexpr byte idWhiteBishop	= 0b0110;
+	static constexpr byte idWhiteRook	= 0b1000;
+	static constexpr byte idWhiteQueen	= 0b1010;
+	static constexpr byte idWhiteKing	= 0b1100;
 
-	static const byte idBlackPawn	= 0b0011;
-	static const byte idBlackKnight	= 0b0101;
-	static const byte idBlackBishop	= 0b0111;
-	static const byte idBlackRook	= 0b1001;
-	static const byte idBlackQueen	= 0b1011;
-	static const byte idBlackKing	= 0b1101;
+	static constexpr byte idBlackPawn	= 0b0011;
+	static constexpr byte idBlackKnight	= 0b0101;
+	static constexpr byte idBlackBishop	= 0b0111;
+	static constexpr byte idBlackRook	= 0b1001;
+	static constexpr byte idBlackQueen	= 0b1011;
+	static constexpr byte idBlackKing	= 0b1101;
 
 	Piece(byte id);
 

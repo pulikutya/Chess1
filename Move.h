@@ -28,6 +28,21 @@ public:
 
 	inline char* ToString();
 
+	inline void start(byte v);
+	inline void end(byte v);
+	inline void extra(byte v);
+
+	inline void sx(sbyte v);
+	inline void sy(sbyte v);
+	inline void ex(sbyte v);
+	inline void ey(sbyte v);
+	inline void dx(sbyte v);
+	inline void dy(sbyte v);
+
+	inline void extra_promotion(byte v);
+	inline void extra_castling(bool v);
+	inline void extra_el_passant(bool v);
+
 
 	bool MoveLegal1(Piece piece);
 };

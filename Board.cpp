@@ -336,7 +336,7 @@ void Board::Do(Move Move)
 	{
 
 	}
-	else if (elpassant)
+	else if (enpassant)
 	{
 
 	}
@@ -357,7 +357,7 @@ void Board::Undo(Move Move, Piece Capture)
 	{
 
 	}
-	else if (elpassant)
+	else if (enpassant)
 	{
 
 	}
@@ -378,14 +378,32 @@ bool Board::MoveLegal(Move Move, bool IncludeCheck)
 	if (StartPiece.Empty()) { return false; }
 	if (!TargetPiece.Empty() && TargetPiece.ColorEqual(StartPiece)) { return false; }
 
-	sbyte 
+	byte start = Move.start();
+	byte end = Move.end();
+	bool castling = Move.extra_castling();
+	bool enpassant = Move.extra_el_passant();
+	byte promotion = Move.extra_promotion();
+	sbyte sx = Move.sx();
+	sbyte sy = Move.sy();
+	sbyte ex = Move.ex();
+	sbyte ey = Move.ey();
+	sbyte dx = Move.ex();
+	sbyte dy = Move.ey();
+
 	if (IncludeCheck)
 	{
 
 	}
 	else
 	{
-	
+
+		switch (StartPiece.id)
+		{
+			case Piece::idBlackKing:
+				;
+			case Piece::idWhiteKing:
+				;
+		}
 	}
 }
 

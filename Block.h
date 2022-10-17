@@ -28,13 +28,13 @@ public:
 template<typename T>
 inline bool Block<T>::iter_next()
 {
-	return (this->iter== this->End())? false : (++(this->iter) == this->End());
+	return ((this->iter) == (this->End()))? false : !(++(this->iter) == this->End());
 }
 
 template<typename T>
 inline bool Block<T>::iter_prev()
 {
-	return (this->iter == this->End()) ? false : (--(this->iter) == this->Pointer-1);
+	return (this->iter == this->End()) ? false : !(--(this->iter) == this->Pointer-1); //no
 }
 
 template<typename T>

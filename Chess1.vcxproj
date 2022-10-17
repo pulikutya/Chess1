@@ -133,6 +133,7 @@
     <ClInclude Include="Gamelog.h" />
     <ClInclude Include="LinkedList2.h" />
     <ClInclude Include="LinkedList2Element.h" />
+    <ClInclude Include="linq.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Piece.h" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Gamelog.cpp" />
+    <ClCompile Include="linq.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Piece.cpp" />
